@@ -14,8 +14,21 @@ def first_challenge
   }
 
   #your code here
+  contacts.each { |contact, memoes|
+      if contact.to_s == "Freddy Mercury"
 
-
+        memoes.each { |key, value|
+          if key.to_s == "favorite_icecream_flavors"
+ 
+            value.delete_if { |flavour|
+              flavour == "strawberry"
+            }
+          end
+        }
+      end
+  }
+ 
+  
   #remember to return your newly altered contacts hash!
   contacts
 end
